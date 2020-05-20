@@ -74,8 +74,7 @@
         forcePoints: $("#id").val().trim()
       };
 
-      // Question: What does this code do??
-      $.post("/api/makereservation", newReservations)
+      $.post("/api/makereservations", newReservations)
         .then(function(data) {
           console.log("make.html", data);
           alert("Adding reservation...");
