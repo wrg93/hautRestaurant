@@ -49,4 +49,21 @@
       </table>
     
 </body>
+
+<script type="text/javascript">
+$.get("/api/makeReservations/", function(data) {
+  console.log(data);
+  if (data) {
+    $("#name").text(data.name);
+    $("#phoneNumber").text(data.phoneNumber);
+    $("#email").text(data.email);
+    $("#id").text(data.id);
+  } else {
+    $("#name").text(
+      "Reservation");
+  }
+});
+
+
+</script>
 </html>
