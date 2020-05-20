@@ -71,7 +71,7 @@
         name: $("#name").val().trim(),
         role: $("phoneNumber").val().trim(),
         age: $("#email").val().trim(),
-        forcePoints: $("#id").val().trim()
+        id: $("#id").val().trim()
       };
 
       $.post("/api/makereservations", newReservations)
