@@ -74,7 +74,7 @@
         id: $("#id").val().trim()
       };
 
-      $.post("/api/makereservations", newReservations)
+      $.post("/api/makereservations", newReservation)
         .then(function(data) {
           console.log("make.html", data);
           alert("Adding reservation...");
