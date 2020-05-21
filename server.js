@@ -3,7 +3,7 @@ var path = require("path");
 
 var app = express();
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -38,8 +38,15 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
   });
 
+  app.post("/api/makereservations", function(req, res) {
+    var newCustomer = req.body
+    console.log(newCustomer); 
+    tableArray.push(newCustomer);
+    res.json(newCustomer);
+  });
+
   app.get("/api/makereservations", function(req, res) {
-    return res.json(reservations);
+   return res.json(newCustomer);
   });
 
   app.get("/api/tables", function(req, res) {
@@ -51,7 +58,7 @@ app.get("/", function(req, res) {
   });
 
   app.post("/api/tables", function(req, res){
-    if (tableArray.length < 5) {
+    if (tableArray.length < 3) {
         tableArray.push(req.body) 
         res.json(true)
     } else {
