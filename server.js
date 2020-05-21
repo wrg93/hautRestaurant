@@ -38,11 +38,15 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
   });
 
-  app.get("/api/makereservations", function(req, res) {
+  app.post("/api/makereservations", function(req, res) {
     var newCustomer = req.body
     console.log(newCustomer); 
     tableArray.push(newCustomer);
-    res.json(newReservation);
+    res.json(newCustomer);
+  });
+
+  app.get("/api/makereservations", function(req, res) {
+   return res.json(newCustomer);
   });
 
   app.get("/api/tables", function(req, res) {
